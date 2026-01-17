@@ -29,9 +29,9 @@ const config = useRuntimeConfig();
 useSeoMeta({
   title: `${config.public.siteName} · Products`,
   description:
-    'A tiny Nuxt 4 e-commerce demo: SSR data fetching, Nitro API, state, and middleware.',
+    "A tiny Nuxt 4 e-commerce demo: SSR data fetching, Nitro API, state, and middleware.",
 });
-const { data: products } = await useFetch('/api/products');
+const { data: products } = await useFetch("/api/products");
 
 const { addToCart } = useCart();
 </script>
@@ -94,5 +94,3 @@ const { addToCart } = useCart();
   }
 }
 </style>
-
-

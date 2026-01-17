@@ -6,13 +6,15 @@
 </div class="nav-links">
 
       <div class="links">
-      <NuxtLink to="/login">Home</NuxtLink> 
+      <NuxtLink to="/">Home</NuxtLink> 
       <NuxtLink to="/login">Login</NuxtLink>
       <NuxtLink to="/admin">Admin</NuxtLink>
       <button v-if="auth" class="linkLike" type="button" @click="logout">cerrar sesion</button>
       </div>   
       <span class="cart">
-        🛒 <span class="cart-count">{{ totalItems }}</span>
+        🛒 <span class="cart-count">{{ totalItems }} / 
+          <strong classs="tabular-nums">{{ totalPrice }} €</strong>
+        </span>
       </span>
     </nav>
   </header>
@@ -22,7 +24,7 @@
   const auth = useState<boolean>('auth', () => false);
     const config= useRuntimeConfig();
     const siteName = config.public.siteName;
-const { totalItems } = useCart();
+const { totalItems, totalPrice } = useCart();
 function logout() {
   auth.value = false;
   navigateTo('/');

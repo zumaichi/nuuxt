@@ -1,4 +1,4 @@
-import type { Product, ProductId } from '~/types/product';
+import type { Product, ProductId } from "~/types/product";
 
 type CartItem = {
   product: Product;
@@ -6,17 +6,17 @@ type CartItem = {
 };
 
 export function useCart() {
-  const items = useState<CartItem[]>('cart-items', () => []);
+  const items = useState<CartItem[]>("cart-items", () => []);
 
   const totalItems = computed(() =>
-    items.value.reduce((sum, item) => sum + item.quantity, 0)
+    items.value.reduce((sum, item) => sum + item.quantity, 0),
   );
 
   const totalPrice = computed(() =>
     items.value.reduce(
       (sum, item) => sum + item.product.price * item.quantity,
-      0
-    )
+      0,
+    ),
   );
 
   function addToCart(product: Product, quantity = 1) {

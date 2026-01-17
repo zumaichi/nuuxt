@@ -5,11 +5,11 @@
   </div>
 </template>
 <script setup lang="ts">
-  const { id } = useRoute().params;
-  const { addToCart } = useCart();
+const { id } = useRoute().params;
+const { addToCart } = useCart();
 
-  useSeoMeta({
-    title: `Product ${id}`,
-    description: `product ${id} description`,
-  });
-  </script>
+useSeoMeta({
+  title: `Product ${id}`,
+  description: `product ${id} description`,
+});
+</script>
