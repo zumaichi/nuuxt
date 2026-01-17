@@ -1,4 +1,4 @@
-import type { Product } from '~/types/product';
+import type { Product } from "~/types/product";
 
 export const products: Product[] = [
   {
@@ -15,6 +15,7 @@ export const products: Product[] = [
       "Edición limitada como las limitadas ofertas de trabajo de Vue.",
     price: 10,
   },
+
   {
     id: 3,
     name: "🖼️ Nitro Sticker Pack",
