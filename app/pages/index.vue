@@ -4,24 +4,32 @@
 
     <div class="grid">
       <article v-for="house in houses" :key="house.id" class="card">
-        <div class="row">
-          <h2 class="title">
-            <NuxtLink class="link" :to="`/products/${house.id}`">{{
-              house.name
-            }}</NuxtLink>
-          </h2>
-          <span class="price">{{ house.price }} €/noche</span>
-        </div>
-        <p class="desc">{{ house.description }}</p>
-        <div class="info">
-          <span>🛏️ {{ house.bedrooms }} habitaciones</span>
-          <span>🛁 {{ house.bathrooms }} baños</span>
-          <span>📍 {{ house.city }}</span>
-        </div>
-        <div class="row end">
-          <button type="button" class="btn" @click="viewDetails(house.id)">
-            Ver detalles
-          </button>
+        <img
+          v-if="house.image"
+          :src="house.image"
+          :alt="house.name"
+          class="house-image"
+        />
+        <div class="card-content">
+          <div class="row">
+            <h2 class="title">
+              <NuxtLink class="link" :to="`/products/${house.id}`">{{
+                house.name
+              }}</NuxtLink>
+            </h2>
+            <span class="price">{{ house.price }} €/noche</span>
+          </div>
+          <p class="desc">{{ house.description }}</p>
+          <div class="info">
+            <span>🛏️ {{ house.bedrooms }} habitaciones</span>
+            <span>🛁 {{ house.bathrooms }} baños</span>
+            <span>📍 {{ house.city }}</span>
+          </div>
+          <div class="row end">
+            <button type="button" class="btn" @click="viewDetails(house.id)">
+              Ver detalles
+            </button>
+          </div>
         </div>
       </article>
     </div>
@@ -58,10 +66,21 @@ const viewDetails = (id: string) => {
   background: white;
   border: 1px solid #e5e7eb;
   border-radius: 12px;
-  padding: 14px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: start;
+}
+.house-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.card-content {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 .title {
   font-size: 18px;

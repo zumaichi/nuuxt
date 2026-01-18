@@ -1,25 +1,23 @@
-import { House, houses } from "~~/server/data/products";
-import { Product } from "~/types/product";
+import { houses } from "~~/server/data/products";
 
 export default defineEventHandler((event) => {
-  const rawId = getRouterParam(event, "id");
-  const id = parseInt(rawId || "", 10);
+  const id = getRouterParam(event, "id");
 
-  // 400 for invalid IDs (missing, NaN, etc.)
-  if (!rawId || Number.isNaN(id) || !Number.isInteger(id) || id <= 0) {
+  if (!id) {
     throw createError({
       statusCode: 400,
-      statusMessage: "id no valido",
+      statusMessage: "ID no válido",
     });
   }
-  const product = houses.find((p: House) => p.id === id);
 
-  // 404 if product not found
-  if (!product) {
+  const house = houses.find((h) => h.id === id);
+
+  if (!house) {
     throw createError({
       statusCode: 404,
-      statusMessage: "no se encuentra",
+      statusMessage: "Casa no encontrada",
     });
   }
-  return product;
+
+  return house;
 });

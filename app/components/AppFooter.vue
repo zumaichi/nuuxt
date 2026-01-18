@@ -1,11 +1,7 @@
 <template>
   <footer class="footer">
     <div class="inner">
-      <span
-        >Demo de e-commerce con <strong>Nuxt 4</strong> (Nitro + SSR + useState
-        + middleware)</span
-      >
-      <span>⋅ 🍋 Lemoncode Shop 2026</span>
+      <span>⋅ 🍋 Casas rurales limoneras 🍋</span>
     </div>
   </footer>
 </template>

@@ -10,7 +10,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       siteName:
-        process.env.NUXT_PUBLIC_SITE_NAME ?? "🍋 Lemoncode Shop × Nuxt 4",
+        process.env.NUXT_PUBLIC_SITE_NAME ?? "🍋 Casas rurales limoneras 🍋",
     },
   },
 });
