@@ -1,9 +1,9 @@
-import { products } from "../../data/products";
+import { House, houses } from "~~/server/data/products";
 import { Product } from "~/types/product";
 
 export default defineEventHandler((event) => {
   const rawId = getRouterParam(event, "id");
-  const id = Number(rawId);
+  const id = parseInt(rawId || "", 10);
 
   // 400 for invalid IDs (missing, NaN, etc.)
   if (!rawId || Number.isNaN(id) || !Number.isInteger(id) || id <= 0) {
@@ -12,7 +12,7 @@ export default defineEventHandler((event) => {
       statusMessage: "id no valido",
     });
   }
-  const product = products.find((p: Product) => p.id === id);
+  const product = houses.find((p: House) => p.id === id);
 
   // 404 if product not found
   if (!product) {

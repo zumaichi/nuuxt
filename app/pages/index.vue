@@ -1,21 +1,26 @@
 <template>
   <div>
-    <h1>Home</h1>
+    <h1>Casas Rurales</h1>
 
     <div class="grid">
-      <article v-for="p in products" :key="p.id" class="card">
+      <article v-for="house in houses" :key="house.id" class="card">
         <div class="row">
           <h2 class="title">
-            <NuxtLink class="link" :to="`/products/${p.id}`">{{
-              p.name
+            <NuxtLink class="link" :to="`/products/${house.id}`">{{
+              house.name
             }}</NuxtLink>
           </h2>
-          <span class="price">{{ p.price }} €</span>
+          <span class="price">{{ house.price }} €/noche</span>
         </div>
-        <p class="desc">{{ p.description }}</p>
+        <p class="desc">{{ house.description }}</p>
+        <div class="info">
+          <span>🛏️ {{ house.bedrooms }} habitaciones</span>
+          <span>🛁 {{ house.bathrooms }} baños</span>
+          <span>📍 {{ house.city }}</span>
+        </div>
         <div class="row end">
-          <button type="button" class="btn" @click="addToCart(p)">
-            Añadir al carrito
+          <button type="button" class="btn" @click="viewDetails(house.id)">
+            Ver detalles
           </button>
         </div>
       </article>
@@ -27,13 +32,16 @@
 const config = useRuntimeConfig();
 
 useSeoMeta({
-  title: `${config.public.siteName} · Products`,
+  title: `${config.public.siteName} · Casas Rurales`,
   description:
-    "A tiny Nuxt 4 e-commerce demo: SSR data fetching, Nitro API, state, and middleware.",
+    "Encuentra las mejores casas rurales de España. Alquiler de casas con piscina, jardín y todas las comodidades.",
 });
-const { data: products } = await useFetch("/api/products");
 
-const { addToCart } = useCart();
+const { data: houses } = await useFetch("/api/products");
+
+const viewDetails = (id: string) => {
+  navigateTo(`/products/${id}`);
+};
 </script>
 
 <style scoped>
@@ -68,6 +76,19 @@ const { addToCart } = useCart();
 .desc {
   margin: 0.8rem 0;
   color: #4b5563;
+}
+.info {
+  display: flex;
+  gap: 12px;
+  margin: 8px 0;
+  font-size: 14px;
+  color: #6b7280;
+  flex-wrap: wrap;
+}
+.info span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 .row {
   display: flex;

@@ -1,5 +1,5 @@
-import { products } from "../data/products";
+import { houses } from "../data/products";
 
 export default defineEventHandler(() => {
-  return products;
+  return houses;
 });
