@@ -1,4 +1,4 @@
-import { houses } from "~~/server/data/products";
+import { houses } from "~~/server/data/houses";
 
 export default defineEventHandler((event) => {
   const id = getRouterParam(event, "id");

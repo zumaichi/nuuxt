@@ -83,7 +83,7 @@
 const route = useRoute();
 const { id } = route.params;
 
-const { data: house } = await useFetch(`/api/products/${id}`);
+const { data: house } = await useFetch(`/api/houses/${id}`);
 
 // Importar el composable useCart
 const { addToCart, totalItems } = useCart();

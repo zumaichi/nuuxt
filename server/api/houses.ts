@@ -1,4 +1,4 @@
-import { houses } from "../data/products";
+import { houses } from "../data/houses";
 
 export default defineEventHandler(() => {
   return houses;

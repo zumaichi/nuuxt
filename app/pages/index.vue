@@ -13,7 +13,7 @@
         <div class="card-content">
           <div class="row">
             <h2 class="title">
-              <NuxtLink class="link" :to="`/products/${house.id}`">{{
+              <NuxtLink class="link" :to="`/houses/${house.id}`">{{
                 house.name
               }}</NuxtLink>
             </h2>
@@ -37,6 +37,17 @@
 </template>
 
 <script setup lang="ts">
+interface House {
+  id: string;
+  name: string;
+  image?: string;
+  price: number;
+  description: string;
+  bedrooms: number;
+  bathrooms: number;
+  city: string;
+}
+
 const config = useRuntimeConfig();
 
 useSeoMeta({
@@ -45,10 +56,10 @@ useSeoMeta({
     "Encuentra las mejores casas rurales de España. Alquiler de casas con piscina, jardín y todas las comodidades.",
 });
 
-const { data: houses } = await useFetch("/api/products");
+const { data: houses } = await useFetch<House[]>("/api/houses");
 
 const viewDetails = (id: string) => {
-  navigateTo(`/products/${id}`);
+  navigateTo(`/houses/${id}`);
 };
 </script>
 

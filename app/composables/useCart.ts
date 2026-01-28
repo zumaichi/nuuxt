@@ -1,4 +1,4 @@
-import type { Product, ProductId } from "~/types/product";
+import type { Product, ProductId } from "~/types/houses";
 
 type CartItem = {
   product: Product;
