@@ -1,3 +1,3 @@
-Buenas , he aqui el laboratorio de nuxt, lo basico esta implementando junto al ejercicio que se fue haciendo en clase y bien, ahora ccomo parte de mi adaptacion de 0 a 100 a la programacion los pocos retos q he implementado han sido apollandome en viedos de youtube un 10% y el resto (no me mateis), codo a codo con copilot q me esta ayudando a entender bastantes cosas, pero por otro lado es verdad q otras cuantas se me quedan muy en el aire.
+Buenas , he aqui el laboratorio de nuxt, lo basico esta implementando junto al ejercicio que se fue haciendo en clase y bien, ahora ccomo parte de mi adaptacion de 0 a 100 a la programacion los pocos retos q he implementado han sido apollandome en viedos de youtube un 10% y el resto (no me mateis), 
 
-asi q quiero aclararlo por q lo vereis pero por otro lado no me quiero esconder por q quiero aprender lo mas que pueda aunq sienta q no llego al nivel de el master bastante amenudo , un saludo y gracias
+etso ultimo q comonto ya quedo acalrado en una tutoria con Antonio y todo ok(una tonteria mu gorda)
